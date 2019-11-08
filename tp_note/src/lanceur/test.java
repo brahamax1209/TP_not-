@@ -1,6 +1,8 @@
 package lanceur;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import metier.Personne;
 import metier.Annonce;
@@ -18,6 +20,12 @@ public class test {
 		Annonce bn = new Annonce (2, "Hetic", "sjkdhgqsjdbj",30.99);
 		
 		methode m = new methode();
+		List<Personne> listp= new ArrayList<Personne>();
+		List<Annonce> listA1= new ArrayList<Annonce>();
+		List<Annonce> listA2= new ArrayList<Annonce>();
+		a.setAnnonces(listA1);
+		b.setAnnonces(listA2);
+		Personne.setBase(listp);
 		m.creerPersonne(Personne.getBase(), a);
 		m.creerPersonne(Personne.getBase(), b);
 		m.creerAnnonce(a, an);
@@ -27,8 +35,6 @@ public class test {
 		m.affichePersonnes();
 		m.findAllAnnonce(a);
 		m.findAllPersonnes();
-		m.deleteAnnonce(a, 1);
-		m.deletePersonne(Personne.getBase(), 2);
 		m.getAnnonce(a, 1);
 		m.getPersonne(Personne.getBase(), 1);
 		m.updatePersonne(Personne.getBase(), a, "Braham", "Abdellah", new Date());

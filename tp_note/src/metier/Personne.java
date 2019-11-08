@@ -7,7 +7,7 @@ public class Personne {
 	private String nom,prenom,login,motdepasse;
 	private Date datedenaissance;
 	private List<Annonce> annonces;
-	private static List<Personne> base;
+	private static List<Personne> base; 
 
 public static List<Personne> getBase() {
 		return base;
