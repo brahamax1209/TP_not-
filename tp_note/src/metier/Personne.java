@@ -3,12 +3,26 @@ import java.util.Date;
 import java.util.List;
 
 public class Personne {
-int personneId;
-String nom,prenom,login,motdepasse;
-Date datedenaissance;
-Annonce annonces;
+	private int personneId;
+	private String nom,prenom,login,motdepasse;
+	private Date datedenaissance;
+	private List<Annonce> annonces;
+	private static List<Personne> base;
+
+public static List<Personne> getBase() {
+		return base;
+	}
+	public static void setBase(List<Personne> base) {
+		Personne.base = base;
+	}
 
 
+public List<Annonce> getAnnonces() {
+		return annonces;
+	}
+	public void setAnnonces(List<Annonce> annonces) {
+		this.annonces = annonces;
+	}
 @Override
 public String toString() {
 	return "Personne [personneId=" + personneId + ", nom=" + nom + ", prenom=" + prenom + ", login=" + login

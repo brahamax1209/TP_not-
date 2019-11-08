@@ -3,11 +3,10 @@ import java.util.Date;
 import java.util.List;
 
 public class Annonce {
-	int idAnnonce;
-	String intitule,detail;
-	Double prix;
-	List<Personne> personnes;
-	
+	private int idAnnonce;
+	private String intitule,detail;
+	private Double prix;
+	private Personne personnes;
 	
 	public Annonce() {
 		super();
@@ -49,13 +48,7 @@ public class Annonce {
 	public void setPrix(Double prix) {
 		this.prix = prix;
 	}
-	public List<Personne> getPersonnes() {
-		return personnes;
-	}
-	public void setPersonnes(List<Personne> personnes) {
-		this.personnes = personnes;
-	} 
-	
+
 	
 	
 }

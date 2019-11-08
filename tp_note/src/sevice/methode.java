@@ -46,57 +46,75 @@ public class methode implements iservice {
 
 	
 	public List<Personne> findAllPersonnes() {
-		// TODO Auto-generated method stub
-		return null;
+		return Personne.getBase();
 	}
 
 	
 	public int getPersonneId(List<Personne> list, Personne p) {
-		// TODO Auto-generated method stub
-		return 0;
+		for(Personne personne: list) {
+			if(personne.getPersonneId()==p.getPersonneId()) {
+				return p.getPersonneId();
+			}}
+			return 0;
 	}
 
 	
 	public void affichePersonnes() {
-		// TODO Auto-generated method stub
+		System.out.println(Personne.getBase().toString());
 		
 	}
 
 
 	public void afficheAnnoncesPersonne(Personne p) {
-		// TODO Auto-generated method stub
-		
+		for(Annonce annonce : p.getAnnonces()) {
+			System.out.println(annonce);
+		}
+	
 	}
 
 	
 	public int creerAnnonce(Personne personne, Annonce a) {
-		// TODO Auto-generated method stub
+		personne.getAnnonces().add(a);
 		return 0;
 	}
 
 	
 	public Annonce getAnnonce(Personne personne, int idAnnonce) {
-		// TODO Auto-generated method stub
+		for(Annonce annonce : personne.getAnnonces()) {
+			if(annonce.getIdAnnonce()==idAnnonce) {
+				return annonce;
+			}
+		}
 		return null;
 	}
 
 	
 	public void deleteAnnonce(Personne personne, int idAnnonce) {
-		// TODO Auto-generated method stub
+		for(Annonce annonce : personne.getAnnonces()) {
+			if(annonce.getIdAnnonce()==idAnnonce) {
+				personne.getAnnonces().remove(annonce);
+			}
+		}
 		
 	}
 
 	
-	public void updateAnnonce(Personne personne, Annonce a) {
-		// TODO Auto-generated method stub
+	public void updateAnnonce(Personne personne, Annonce a, Annonce b) {
+		for(Annonce annonce : personne.getAnnonces()) {
+			if(annonce.getIdAnnonce()==a.getIdAnnonce()) {
+				a=b;
+			}
+			}
 		
 	}
 
 	
 	public List<Annonce> findAllAnnonce(Personne personne) {
-		// TODO Auto-generated method stub
-		return null;
+		return personne.getAnnonces();
 	}
+
+
+
 	
 
 }
